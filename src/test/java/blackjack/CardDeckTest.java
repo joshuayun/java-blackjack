@@ -3,13 +3,12 @@ package blackjack;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CardDeckTest {
 
     @Test
     void cardDeckTest() {
-        Card card = new Card(CardShape.하트, CardLetter.K);
+        Card card = new Card(CardShape.HEARTS, CardLetter.K);
         CardDeck cardDeck = new CardDeck() {
             @Override
             public Card pickCard() {

@@ -11,6 +11,6 @@ public class Dealer implements User {
 
     @Override
     public Collection<Card> getCards() {
-        return Set.of(new Card(CardShape.하트, CardLetter.K));
+        return Set.of(new Card(CardShape.HEARTS, CardLetter.K));
     }
 }
