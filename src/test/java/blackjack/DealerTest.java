@@ -10,12 +10,7 @@ class DealerTest {
     @Test
     void dealerTest() {
         Dealer dealer = new Dealer();
-        CardDeck cardDeck = new CardDeck() {
-            @Override
-            public Card pickCard() {
-                return new Card("하트", "K");
-            }
-        };
+        CardDeck cardDeck = () -> new Card(CardShape.하트, CardLetter.K);
 
         dealer.receiveCard(cardDeck);
 

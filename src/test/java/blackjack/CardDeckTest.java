@@ -9,7 +9,7 @@ class CardDeckTest {
 
     @Test
     void cardDeckTest() {
-        Card card = new Card("하트", "K");
+        Card card = new Card(CardShape.하트, CardLetter.K);
         CardDeck cardDeck = new CardDeck() {
             @Override
             public Card pickCard() {
@@ -19,6 +19,6 @@ class CardDeckTest {
 
         Card actual = cardDeck.pickCard();
 
-        assertThat(actual.getLetter()).isEqualTo("K");
+        assertThat(actual.getLetter()).isEqualTo(CardLetter.K);
     }
 }

@@ -1,16 +1,17 @@
 package blackjack;
 
-public class Card {
-    final String shape;
-    final String letter;
+import java.util.Arrays;
 
-    public Card(String shape, String letter) {
+public class Card {
+    final CardShape shape;
+    final CardLetter letter;
+
+    public Card(CardShape shape, CardLetter letter) {
         this.shape = shape;
         this.letter = letter;
     }
 
-
-    public String getLetter() {
+    public CardLetter getLetter() {
         return letter;
     }
 }
