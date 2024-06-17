@@ -1,18 +1,28 @@
 package blackjack;
 
 public enum CardLetter {
-    A,
-    일,
-    이,
-    삼,
-    사,
-    오,
-    육,
-    칠,
-    팔,
-    구,
-    십,
-    K,
-    Q,
-    J;
+    ACE(11),
+    ONE(1),
+    TWO(2),
+    THREE(3),
+    FOUR(4),
+    FIVE(5),
+    SIX(6),
+    SEVEN(7),
+    EIGHT(8),
+    NINE(9),
+    TEN(10),
+    KING(10),
+    QUEEN(10),
+    JACK(10);
+
+    private final int point;
+
+    CardLetter(int point) {
+        this.point = point;
+    }
+
+    public int getPoint() {
+        return point;
+    }
 }

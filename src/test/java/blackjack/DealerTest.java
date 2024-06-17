@@ -9,7 +9,7 @@ class DealerTest {
     @Test
     void dealerTest() {
         Dealer dealer = new Dealer();
-        CardDeck cardDeck = () -> new Card(CardShape.HEARTS, CardLetter.K);
+        CardDeck cardDeck = () -> new Card(CardShape.HEARTS, CardLetter.KING);
 
         dealer.receiveCard(cardDeck);
 

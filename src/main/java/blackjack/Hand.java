@@ -22,7 +22,7 @@ public class Hand {
         return cards.size();
     }
 
-    public int totalCardPoint(Point point) {
-        return point.calculate(cards);
+    public int totalCardPoint(Points points) {
+        return points.calculate(cards);
     }
 }

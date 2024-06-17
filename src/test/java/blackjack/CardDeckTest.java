@@ -8,16 +8,11 @@ class CardDeckTest {
 
     @Test
     void cardDeckTest() {
-        Card card = new Card(CardShape.HEARTS, CardLetter.K);
-        CardDeck cardDeck = new CardDeck() {
-            @Override
-            public Card pickCard() {
-                return card;
-            }
-        };
+        Card card = new Card(CardShape.HEARTS, CardLetter.KING);
+        CardDeck cardDeck = () -> card;
 
         Card actual = cardDeck.pickCard();
 
-        assertThat(actual.getLetter()).isEqualTo(CardLetter.K);
+        assertThat(actual.getLetter()).isEqualTo(CardLetter.KING);
     }
 }

@@ -11,7 +11,7 @@ class HandTest {
     @Test
     void add() {
         Hand hand = new Hand(Set.of());
-        Card card = new Card(CardShape.HEARTS, CardLetter.K);
+        Card card = new Card(CardShape.HEARTS, CardLetter.KING);
 
         hand.add(card);
 
@@ -23,8 +23,8 @@ class HandTest {
     @Test
     void duplicateAdd() {
         Hand hand = new Hand(Set.of());
-        Card card = new Card(CardShape.HEARTS, CardLetter.K);
-        Card duplicatedCard = new Card(CardShape.HEARTS, CardLetter.K);
+        Card card = new Card(CardShape.HEARTS, CardLetter.KING);
+        Card duplicatedCard = new Card(CardShape.HEARTS, CardLetter.KING);
 
         hand.add(card);
 
@@ -42,9 +42,9 @@ class HandTest {
     @Test
     void totalCardPoint() {
         Hand hand = new Hand(Set.of(
-                new Card(CardShape.HEARTS, CardLetter.A),
-                new Card(CardShape.DIAMONDS, CardLetter.K),
-                new Card(CardShape.SPADES, CardLetter.J)
+                new Card(CardShape.HEARTS, CardLetter.ACE),
+                new Card(CardShape.DIAMONDS, CardLetter.KING),
+                new Card(CardShape.SPADES, CardLetter.JACK)
         ));
         int actual = hand.totalCardPoint(cards -> 21);
 
