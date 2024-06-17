@@ -9,7 +9,17 @@ class CardDeckTest {
     @Test
     void cardDeckTest() {
         Card card = new Card(CardShape.HEARTS, CardLetter.KING);
-        CardDeck cardDeck = () -> card;
+        CardDeck cardDeck = new CardDeck() {
+            @Override
+            public Card pickCard() {
+                return card;
+            }
+
+            @Override
+            public boolean contains(Card card) {
+                return false;
+            }
+        };
 
         Card actual = cardDeck.pickCard();
 

@@ -5,22 +5,24 @@ import blackjack.view.InputView;
 import blackjack.view.OutputView;
 
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class BlackJackApplication {
 
-    private static InputView inputView;
-    private static OutputView outputView;
-
     public static void main(String[] args) {
-        inputView = new InputView();
-        outputView = new OutputView();
-
+        InputView inputView = new InputView();
+        OutputView outputView = new OutputView();
         List<String> names = inputView.inputPlayersName();
 
-        User dealer = new Dealer(new Hand(Set.of(new Card(CardShape.CLUBS, CardLetter.ACE))));
-        List<User> players = names.stream().map(name -> new Player(name, new Hand(Set.of(new Card(CardShape.CLUBS, CardLetter.ACE))))).collect(Collectors.toList());
+        CardDeck cardDeck = new TopCardDeck();
+        User dealer = new Dealer(new Hand());
+        List<User> players = names.stream()
+                .map(name -> new Player(name, new Hand()))
+                .peek(player -> player.setUpCard(cardDeck))
+                .collect(Collectors.toList());
+
+        dealer.setUpCard(cardDeck);
+
         outputView.printHandStatus(dealer, players);
         //boolean additionalCardCondition = inputView.inputAdditionalCardCondition();
     }

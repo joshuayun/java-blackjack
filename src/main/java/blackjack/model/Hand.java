@@ -6,6 +6,10 @@ import java.util.Set;
 public class Hand {
     private final Set<Card> cards;
 
+    public Hand() {
+        this.cards = new HashSet<>();
+    }
+
     public Hand(Set<Card> cards) {
         this.cards = new HashSet<>(cards);
     }
@@ -23,6 +27,10 @@ public class Hand {
 
     public int totalCardPoint(Points points) {
         return points.calculate(cards);
+    }
+
+    public boolean isBurst(Points points) {
+        return totalCardPoint(points) > 21;
     }
 
     public boolean contains(Card card) {

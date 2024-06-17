@@ -50,4 +50,5 @@ class HandTest {
 
         assertThat(actual).isEqualTo(21);
     }
+
 }
