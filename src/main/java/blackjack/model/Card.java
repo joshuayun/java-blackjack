@@ -1,6 +1,5 @@
-package blackjack;
+package blackjack.model;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 public class Card {
@@ -14,6 +13,10 @@ public class Card {
 
     public CardLetter getLetter() {
         return letter;
+    }
+
+    public String getCard() {
+        return shape.name() +"/"+ letter.name();
     }
 
     @Override
