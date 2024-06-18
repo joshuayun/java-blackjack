@@ -25,12 +25,12 @@ public class Hand {
         return cards.size();
     }
 
-    public int totalCardPoint(Points points) {
-        return points.calculate(cards);
+    public int totalCardPoint(CalculatePoints calculatePoints) {
+        return calculatePoints.calculate(cards);
     }
 
-    public boolean isBurst(Points points) {
-        return totalCardPoint(points) > 21;
+    public boolean isBurst(CalculatePoints calculatePoints) {
+        return totalCardPoint(calculatePoints) > 21;
     }
 
     public boolean contains(Card card) {

@@ -1,5 +1,7 @@
 package blackjack.model;
 
+import java.util.Set;
+
 public class Dealer implements User {
     final Hand hand;
 
@@ -15,8 +17,8 @@ public class Dealer implements User {
     }
 
     @Override
-    public void receiveCard(CardDeck cardDeck, Points points) {
-        if (hand.totalCardPoint(points) > 16) {
+    public void receiveCard(CardDeck cardDeck, CalculatePoints calculatePoints) {
+        if (hand.totalCardPoint(calculatePoints) > 16) {
             throw new IllegalStateException("딜러의 점수가 16을 초과하여 카드를 더이상 받을 수 없습니다.");
         }
 
@@ -34,19 +36,17 @@ public class Dealer implements User {
     }
 
     @Override
-    public String openCard() {
-        Card card = hand.getCards().stream().findFirst().orElseThrow(() -> new IllegalStateException("카드가 없습니다."));
-        return card.getCard();
-    }
-
-
-    @Override
-    public boolean isBurst(Points points) {
-        return hand.isBurst(points);
+    public Set<Card> getCards() {
+        return hand.getCards();
     }
 
     @Override
-    public int getPoints(Points points) {
-        return hand.totalCardPoint(points);
+    public boolean isBurst(CalculatePoints calculatePoints) {
+        return hand.isBurst(calculatePoints);
+    }
+
+    @Override
+    public int getPoints(CalculatePoints calculatePoints) {
+        return hand.totalCardPoint(calculatePoints);
     }
 }

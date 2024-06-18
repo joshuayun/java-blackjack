@@ -2,6 +2,6 @@ package blackjack.model;
 
 import java.util.Set;
 
-public interface Points {
+public interface CalculatePoints {
     int calculate(Set<Card> cards);
 }

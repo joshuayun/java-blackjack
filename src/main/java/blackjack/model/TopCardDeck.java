@@ -13,6 +13,8 @@ public class TopCardDeck implements CardDeck {
                         .map(cardLetter -> new Card(cardShape, cardLetter))
                 )
                 .collect(Collectors.toList());
+
+        Collections.shuffle(cards);
     }
 
     @Override

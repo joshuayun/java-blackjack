@@ -2,7 +2,7 @@ package blackjack.model;
 
 import java.util.Set;
 
-public class BlackJackPoints implements Points {
+public class CalculateBlackJackPoints implements CalculatePoints {
     private static final int BLACK_JACK_MAX_POINT = 21;
 
     @Override

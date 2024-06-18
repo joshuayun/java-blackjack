@@ -1,17 +1,19 @@
 package blackjack.model;
 
+import java.util.Set;
+
 public interface User {
     void setUpCard(CardDeck cardDeck);
 
-    void receiveCard(CardDeck cardDeck, Points points);
+    void receiveCard(CardDeck cardDeck, CalculatePoints calculatePoints);
 
     boolean contains(Card card);
 
     String getName();
 
-    String openCard();
+    Set<Card> getCards();
 
-    boolean isBurst(Points points);
+    boolean isBurst(CalculatePoints calculatePoints);
 
-    int getPoints(Points points);
+    int getPoints(CalculatePoints calculatePoints);
 }

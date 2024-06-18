@@ -13,8 +13,8 @@ class BlackJackPointsTest {
     @ParameterizedTest
     @MethodSource("generateCards")
     void calculate(final Set<Card> cards, final int expectedScore) {
-        BlackJackPoints blackJackPoints = new BlackJackPoints();
-        int actual = blackJackPoints.calculate(cards);
+        CalculateBlackJackPoints calculateBlackJackPoints = new CalculateBlackJackPoints();
+        int actual = calculateBlackJackPoints.calculate(cards);
 
         assertThat(actual).isEqualTo(expectedScore);
     }
