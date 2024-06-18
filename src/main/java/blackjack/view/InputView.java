@@ -19,7 +19,7 @@ public class InputView {
         Scanner scanner = new Scanner(System.in);
         String condition = scanner.nextLine();
         condition = condition.trim();
-        return "Y".equals(condition);
+        return "Y".equals(condition.toUpperCase());
     }
 
 

@@ -8,10 +8,13 @@ public class Player implements User {
 
     final Hand hand;
 
+
     public Player(String name, Hand hand) {
         this.name = name.trim();
         this.hand = hand;
     }
+
+
 
     @Override
     public void setUpCard(CardDeck cardDeck) {
@@ -44,16 +47,12 @@ public class Player implements User {
         return hand.getCards().stream().map(Card::getCard).collect(Collectors.joining(","));
     }
 
-    @Override
-    public Score isWinner(User other, Points points) {
-        if (!(other instanceof Dealer)) {
-            throw new IllegalArgumentException("플레이어는 딜러와만 승패를 비교할 수 있습니다.");
-        }
+    public Score getScore(Dealer dealer, Points points) {
 
         int playerPoints = getPoints(points);
-        int dealerPoints = other.getPoints(points);
+        int dealerPoints = dealer.getPoints(points);
 
-        if (isBurst(points) || other.isBurst(points) || playerPoints == dealerPoints) {
+        if (isBurst(points) || dealer.isBurst(points) || playerPoints == dealerPoints) {
             return Score.draw;
         }
 

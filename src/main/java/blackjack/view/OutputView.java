@@ -11,11 +11,11 @@ public class OutputView {
         System.out.println("딜러와 "
                 + players.stream().map(User::getName).collect(Collectors.joining(","))
                 + "에게 2장을 나누었습니다.");
-        System.out.println("딜러: " + dealer.openCard());
+        printUserHandStasus(dealer);
+        players.forEach(this::printUserHandStasus);
+    }
 
-        players.forEach(
-                player -> System.out.println(player.getName() + "카드: " + player.openCard())
-        );
-
+    public void printUserHandStasus(User user) {
+        System.out.println(user.getName() + " 카드 : " + user.openCard());
     }
 }

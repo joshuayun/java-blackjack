@@ -11,8 +11,6 @@ public interface User {
 
     String openCard();
 
-    Score isWinner(User other, Points points);
-
     boolean isBurst(Points points);
 
     int getPoints(Points points);

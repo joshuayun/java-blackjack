@@ -39,25 +39,6 @@ public class Dealer implements User {
         return card.getCard();
     }
 
-    @Override
-    public Score isWinner(User other, Points points) {
-        if (!(other instanceof Player)) {
-            throw new IllegalArgumentException("딜러는 플레이어와만 승패를 비교할 수 있습니다.");
-        }
-
-        int playerPoints = getPoints(points);
-        int dealerPoints = other.getPoints(points);
-
-        if (isBurst(points) || other.isBurst(points) || playerPoints == dealerPoints) {
-            return Score.draw;
-        }
-
-        if (playerPoints > dealerPoints) {
-            return Score.win;
-        }
-
-        return Score.lose;
-    }
 
     @Override
     public boolean isBurst(Points points) {
